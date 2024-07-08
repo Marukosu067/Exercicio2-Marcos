@@ -1,0 +1,34 @@
+print("Escolha a figura geométrica:")
+print("1. Triângulo")
+print("2. Retângulo")
+print("3. Círculo")
+
+def triangulo():
+  base = float(input("Base do triângulo:"))
+  altura = float(input("Altura do triângulo: "))
+  area = (base * altura) / 2
+  print("Área do triângulo:", area)
+
+def retangulo():
+  base = float(input("Base do retângulo: "))
+  altura = float(input("Altura do retângulo:"))
+  area = base * altura
+  print("Área do retângulo:", area)
+
+def circulo():
+  raio = float(input("Raio do círculo: "))
+  area = 3.14 * raio ** 2
+  print("Área do círculo:", area)
+
+figura = int(input("Digite o número correspondente à figura geométrica: "))
+
+if figura == 1:
+  triangulo()
+elif figura == 2:
+ retangulo()
+elif figura == 3:
+  circulo()
+else:
+  print("Voce escolheu um numero errado.")
+
+#tive que pegar ajuda do chat, teve bastante coisa que testei e acabei confuso sinceramente
