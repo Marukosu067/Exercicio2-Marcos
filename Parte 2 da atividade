@@ -1,0 +1,27 @@
+import random
+def Jokempofodas():
+  opcoes = ["pedra", "papel", "tesoura"]
+  computador = random.choice(opcoes)
+  jogador = input("Escolha pedra, papel ou tesoura: ").lower()
+  print("computador escolheu " + computador)
+  if jogador not in opcoes:
+    print("Opção errada. Escolha pedra, papel ou tesoura.")
+    return
+  if jogador == computador:
+    print("Empate!")
+  elif jogador == "pedra":
+    if computador == "tesoura":
+      print("Você ganhou!")
+    else:
+      print("Você perdeu!")
+  elif jogador == "papel":
+    if computador == "pedra":
+      print("Você ganhou!")
+    else:
+      print("Você perdeu!")
+  elif jogador == "tesoura":
+    if computador == "papel":
+      print("Você ganhou!")
+    else:
+      print("Você perdeu!")
+Jokempofodas()
