@@ -1,0 +1,33 @@
+import random
+print("Bem vindo ao jogo da forca!")
+print("Você terá 8 tentativas para encontrar as palavras secretas.")
+print("Para receer uma dica digite: easy.")
+palavras = ["abacaxi", "banana", "laranja", "morango", "uva"]
+
+palavra_secreta = random.choice(palavras)
+
+letras_adivinhadas = []
+
+tentativas_maximas = 8
+
+while True:
+  print("Palavra secreta:", "".join(["_" if letra not in letras_adivinhadas else letra for letra in palavra_secreta]))
+  letra = input("Digite uma letra: ").lower()
+  if not letra.isalpha():
+    print("Letra inválida. Digite uma letra do alfabeto.")
+    continue
+  if letra == ("easy"):
+    print("Dica: A palavra começa com a letra", palavra_secreta[0])
+  if letra in letras_adivinhadas:
+    print("Letra já adivinhada. Tente outra.")
+    continue
+
+  letras_adivinhadas.append(letra)
+
+  if "".join(letras_adivinhadas) == palavra_secreta:
+    print("Parabéns! Você acertou a palavra secreta!")
+    break
+
+  if len(letras_adivinhadas) == tentativas_maximas:
+    print("Você perdeu! A palavra secreta era:", palavra_secreta)
+    break
